@@ -4,8 +4,8 @@ from _thread import *
 
 def client_thread (con):
    data = con.recv(1024)
-   message = data.decode(1024)
-   print (f"клиент прислал{message}")
+   message = data.decode()
+   print (f"клиент прислал {message}")
    message = (message[::-1])
 
    con.send(message.encode())
